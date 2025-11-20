@@ -12,6 +12,7 @@
     font-family: "Merienda", cursive;
     font-weight: 300;
     text-align: center;
+    margin: auto;
 }
 
 .cellContainer {
@@ -25,5 +26,5 @@
     display: grid;
     grid-template-columns: repeat(3, auto);
     width: 225px;
-    margin: 0px 650px;
+    margin: auto;
 }
