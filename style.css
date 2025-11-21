@@ -12,7 +12,6 @@
     font-family: "Merienda", cursive;
     font-weight: 300;
     text-align: center;
-    margin: auto;
 }
 
 .cellContainer {
@@ -26,5 +25,17 @@
     display: grid;
     grid-template-columns: repeat(3, auto);
     width: 225px;
-    margin: auto;
+}
+
+body { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#restart {
+    padding: 7px 30px;
+    font-size: 17px;
+    border-radius: 12px;
+    background-color: azure;
 }

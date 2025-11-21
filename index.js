@@ -1,4 +1,4 @@
-const cells = document.querySelectorAll(".cell")
+let cells = document.querySelectorAll(".cell")
 const Outercells = document.querySelectorAll(".cellContainer")
 const statusText = document.querySelector("#TurnStatus")
 const RestartButton = document.querySelector("#restart")
@@ -25,10 +25,7 @@ let OuterOptions = ["", "", "", "", "", "", "", "", ""]
 let currentPlayer = "X";
 let currentGame = 4
 let running = false
-let OutercellsHtml = null
-Outercells.forEach(cell => {
-    OutercellsHtml = cell.innerHTML
-})
+let OutercellsHtml = Outercells[0].innerHTML
 
 
 initializeGame()
@@ -185,9 +182,14 @@ function restartGame() {
                 ["", "", "", "", "", "", "", "", ""],
                 ["", "", "", "", "", "", "", "", ""],
                 ["", "", "", "", "", "", "", "", ""]]
+    OuterOptions = ["", "", "", "", "", "", "", "", ""]
     currentGame = 4
     statusText.textContent = currentPlayer + "'s turn \n game: " + (currentGame + 1)
     cells.forEach(cell => cell.textContent = "")
     Outercells.forEach(cell => cell.innerHTML = OutercellsHtml)
+    cells = document.querySelectorAll(".cell")
+    cells.forEach(cell => {
+        cell.addEventListener("click", cellCLicked)
+    })
     running = true
 }
