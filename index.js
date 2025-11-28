@@ -112,7 +112,7 @@ function CheckInnerWin(index) {
         setGame(index)
         checkOuterWin()
     }
-    else if(CheckOptions()) {
+    else if(CheckOptionsEmpty()) {
         Outercells.forEach(cell => {
             if (cell.getAttribute("containerIndex") == currentGame) {
                 OuterOptions[currentGame] = currentPlayer
@@ -161,14 +161,12 @@ function checkOuterWin() {
     }
 }
 
-function CheckOptions() {
-    let empty = true
-    for (i = 0; i < options.length; i++) {
-        if (options[i].includes("")) {
-            empty = false
-        }
+function CheckOptionsEmpty() {
+    let IsEmpty = true
+    if (options[currentGame].includes("")) {
+        IsEmpty = false
     }
-    return empty
+    return IsEmpty
 }
 
 function restartGame() {
