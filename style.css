@@ -39,3 +39,7 @@ body {
     border-radius: 12px;
     background-color: azure;
 }
+
+#gameContainer {
+    margin-right: 350px;
+}
